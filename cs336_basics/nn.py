@@ -1,5 +1,5 @@
 """
-Basic nn building blocks (Linear, etc.) — CS336 assignment 3.4.
+Basic nn building blocks (Linear, etc.) — CS336 assignment1 3.4.
 """
 from __future__ import annotations
 

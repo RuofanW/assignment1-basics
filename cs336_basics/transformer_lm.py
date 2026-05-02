@@ -72,8 +72,3 @@ class TransformerLM(nn.Module):
             x = layer(x, positions)
         norm_out = self.norm(x)
         return self.linear(norm_out)
-
-
-
-        
-
