@@ -195,7 +195,11 @@ def load_checkpoint(
     Returns:
         The iteration (step) stored in the checkpoint.
     """
-    ckpt = torch.load(src, map_location="cpu")
+    try:
+        device = next(model.parameters()).device
+    except StopIteration:
+        device = torch.device("cpu")
+    ckpt = torch.load(src, map_location=device, weights_only=False)
 
     if not isinstance(ckpt, dict):
         raise TypeError("Checkpoint must be a dict.")
