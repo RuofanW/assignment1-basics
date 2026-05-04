@@ -146,9 +146,12 @@ def train_bpe(input_path: str, vocab_size: int, special_tokens: list[str]) -> tu
 if __name__ == "__main__":
     path_tinystories = "data/TinyStoriesV2-GPT4-train.txt"
     path_owt = "data/owt_train.txt"
-    # vocab, merges = train_bpe(path_tinystories, 10000, ['<|endoftext|>'])
-    vocab, merges = train_bpe(path_owt, 32000, ['<|endoftext|>'])
+    vocab, merges = train_bpe(path_tinystories, 10000, ['<|endoftext|>'])
+    # vocab, merges = train_bpe(path_owt, 32000, ['<|endoftext|>'])
 
-    with open("owt_vocab.pkl", "wb") as f:
-        pickle.dump({"vocab": vocab, "merges": merges}, f)
+    with open("trained_artifacts/tinystories_vocab.pkl", "wb") as f:
+        pickle.dump(vocab, f)
+
+    with open("trained_artifacts/tinystories_merges.pkl", "wb") as f:
+        pickle.dump(merges, f)
 

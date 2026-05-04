@@ -31,7 +31,7 @@ class Config:
     weight_decay: float = 0.01
     betas: tuple[float, float] = (0.9, 0.999)
     eps: float = 1e-8
-    vocab_size: int = 50257
+    vocab_size: int = 10000
     # Full training checkpoint (model + optimizer + step count)
     checkpoint_path: str = "checkpoint.pt"
     # If non-empty, load this checkpoint before training (optimizer + model + start step)
